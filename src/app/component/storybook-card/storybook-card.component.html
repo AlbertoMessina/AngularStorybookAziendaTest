@@ -1,0 +1,12 @@
+<div class="row card {{storybookcard.card.type}}">
+    <div class="col-md-12 card-header">
+        {{storybookcard.card.title}}
+    </div>
+    <div class="col-md-12 card-body">
+        <img class="card-img" (click)='openCard(storybookcard.card.id)' src="{{storybookcard.card.imageSrc}}" alt={{storybookcard.card.altImageSrc}}>
+    </div>
+
+    <div *ngIf='storybookcard.card.type != "small-card"' class="col-md-12 card-footer">
+        <actionbar [actionbar]='storybookcard.actionbar' (onClickAction)="onClickAction.emit($event)"></actionbar>
+    </div>
+</div>
